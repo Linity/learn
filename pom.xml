@@ -9,6 +9,7 @@
 	<modules>
 		<module>learn-web</module>
 		<module>learn-flink</module>
+		<module>learn-solidity</module>
 	</modules>
 
 	<parent>
