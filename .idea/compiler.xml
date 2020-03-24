@@ -13,9 +13,9 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="learn" target="1.8" />
-      <module name="learn-flink" target="1.7" />
-      <module name="learn-solidity" target="1.7" />
-      <module name="learn-web" target="1.7" />
+      <module name="learn-flink" target="1.8" />
+      <module name="learn-solidity" target="1.8" />
+      <module name="learn-web" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
