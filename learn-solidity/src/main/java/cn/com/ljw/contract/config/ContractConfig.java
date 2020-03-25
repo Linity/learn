@@ -3,6 +3,8 @@ package cn.com.ljw.contract.config;
 import cn.hyperchain.sdk.crypto.ECPriv;
 import cn.hyperchain.sdk.rpc.HyperchainAPI;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Component;
 
 import java.io.InputStream;
 import java.util.Properties;
@@ -10,6 +12,8 @@ import java.util.Properties;
 /**
  * Created by Steph_Lin on 2020/3/24.
  */
+@Component
+@PropertySource("classpath:block.properties")
 public class ContractConfig {
 
     private Properties prop = new Properties();
@@ -20,8 +24,8 @@ public class ContractConfig {
     @Value("${dev.contract.jarname}")
     public String ContractJarName;
 
-    @Value("${dev.contract.prop}")
-    public String contractPropPath;
+//    @Value("${dev.contract.prop}")
+//    public String contractPropPath;
 
     @Value("${dev.contract.account}")
     public String defaultAccountJson;
@@ -44,9 +48,9 @@ public class ContractConfig {
 
     public void init(){
         try {
-            propReader = ContractConfig.class.getClassLoader().getResourceAsStream(contractPropPath);
+//            propReader = ContractConfig.class.getClassLoader().getResourceAsStream(contractPropPath);
             defaultAccount = HyperchainAPI.decryptAccount(defaultAccountJson, defaultAccountJsonPwd);
-            prop.load(propReader);
+//            prop.load(propReader);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -91,9 +95,9 @@ public class ContractConfig {
         return ContractJarName;
     }
 
-    public String getContractPropPath() {
-        return contractPropPath;
-    }
+//    public String getContractPropPath() {
+//        return contractPropPath;
+//    }
 
     public String getDefaultAccountJson() {
         return defaultAccountJson;
