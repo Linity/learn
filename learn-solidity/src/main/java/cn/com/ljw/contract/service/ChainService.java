@@ -68,6 +68,33 @@ public class ChainService {
         return null;
     }
 
+    public String updateContract(){
+        try {
+            String bin = Utils.readFile("logContract_sol_LogContract.bin").trim();
+            Transaction deployTransaction = new Transaction(contractConfig.getDefaultAccount().address(), bin, false);
+            // 对部署交易进行签名
+            deployTransaction.sign(contractConfig.getDefaultAccount());
+            // 部署合约
+            ReceiptReturn receiptReturn = ContractConfig.getHyperchainAPI().maintainContract(deployTransaction);
+            // 查询部署结果, 取得合约地址
+            String contractAddress;
+            if (receiptReturn.isSuccess()){
+                contractAddress = receiptReturn.getContractAddress();
+                return contractAddress;
+            }else {
+                System.out.println("错误原因 : " + receiptReturn.getError());
+                throw new RuntimeException("Contract update failed!!");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (TxException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     // 执行合约方法
     public <T> T invoke(String contractAddress, String function, Class<T> type, FuncParamReal... funcParams){
         // 取得编码方法体
