@@ -58,8 +58,8 @@ public class ChainLogService {
         return invoke;
     }
 
-    public List<ContractChainLog> getContractChainLogs(){
-
-    }
+//    public List<ContractChainLog> getContractChainLogs(){
+//
+//    }
 
 }

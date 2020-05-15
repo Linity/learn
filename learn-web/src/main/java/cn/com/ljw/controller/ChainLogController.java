@@ -25,7 +25,7 @@ public class ChainLogController {
 
     @ApiOperation("日志上链")
     @PostMapping("/saveChainLog")
-    public int saveChainLog(@RequestBody LogModel logModel) {
+    public boolean saveChainLog(@RequestBody LogModel logModel) {
         return chainLogService.save(logModel);
     }
 

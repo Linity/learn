@@ -25,7 +25,7 @@ public class ContractConfig {
     public String ContractJarName;
 
 //    @Value("${dev.contract.prop}")
-//    public String contractPropPath;
+//    public String contractProp;
 
     @Value("${dev.contract.account}")
     public String defaultAccountJson;
@@ -48,7 +48,7 @@ public class ContractConfig {
 
     public void init(){
         try {
-//            propReader = ContractConfig.class.getClassLoader().getResourceAsStream(contractPropPath);
+//            propReader = ContractConfig.class.getClassLoader().getResourceAsStream(contractProp);
             defaultAccount = HyperchainAPI.decryptAccount(defaultAccountJson, defaultAccountJsonPwd);
 //            prop.load(propReader);
         } catch (Exception e) {
