@@ -6,10 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication(scanBasePackages = {"cn.com.ljw"})
 @MapperScan(basePackages="cn.com.ljw.dao")
-public class StartUpApp {
+public class StartApp {
 
     public static void main( String[] args ) {
-        SpringApplication.run(StartUpApp.class);
+        SpringApplication.run(StartApp.class);
     }
 
 }

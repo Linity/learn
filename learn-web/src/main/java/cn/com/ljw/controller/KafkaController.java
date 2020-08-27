@@ -1,7 +1,8 @@
 package cn.com.ljw.controller;
 
-import cn.com.ljw.websocket.WebSocket;
+import cn.com.ljw.kafka.KafkaProducer;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,28 +10,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Created by Steph_Lin on 2020/5/9.
+ * @author Steph_Lin
+ * @date 2020/8/27
  */
 @Slf4j
-@Api(tags = "test")
+@Api(tags = "kafka操作")
 @RestController
-@RequestMapping("/test")
-public class TestController {
+@RequestMapping("/kafka操作")
+public class KafkaController {
 
     @Autowired
-    WebSocket webSocket;
+    private KafkaProducer kafkaProducer;
 
-    @GetMapping("/websocket")
-    public String websocket(){
-
-        webSocket.sendTextMessage("1", "处理完毕！");
-
-        return "success";
-    }
-
-
-    public static void main(String[] args) {
-
+    @ApiOperation("根据区块哈希获取区块信息")
+    @GetMapping("/send")
+    public void send() {
+        kafkaProducer.send("test");
     }
 
 }
