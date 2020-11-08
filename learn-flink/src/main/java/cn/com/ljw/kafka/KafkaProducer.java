@@ -13,7 +13,7 @@ import org.springframework.util.concurrent.ListenableFutureCallback;
  * @author Steph_Lin
  * @date 2020/8/27
  */
-@Component
+//@Component
 @Slf4j
 public class KafkaProducer {
 

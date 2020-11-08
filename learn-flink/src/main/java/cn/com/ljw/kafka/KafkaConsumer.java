@@ -14,7 +14,7 @@ import java.util.Optional;
  * @author Steph_Lin
  * @date 2020/8/27
  */
-@Component
+//@Component
 @Slf4j
 public class KafkaConsumer {
 

@@ -7,8 +7,7 @@ import org.junit.Test;
 /**
  * Unit test for simple App.
  */
-public class StartAppTest
-{
+public class StartAppTest {
     /**
      * Rigorous Test :-)
      */
@@ -17,4 +16,13 @@ public class StartAppTest
     {
         assertTrue( true );
     }
+
+
+    public static void main(String[] args) {
+        ReportExporter reportExporter = new ReportExporter();
+        reportExporter.exportPdf();
+        reportExporter.exportCsv();
+    }
+
+
 }
