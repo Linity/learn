@@ -22,11 +22,11 @@
             <artifactId>learn-solidity</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-        <dependency>
-            <groupId>cn.com.ljw</groupId>
-            <artifactId>learn-flink</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>cn.com.ljw</groupId>-->
+            <!--<artifactId>learn-flink</artifactId>-->
+            <!--<version>0.0.1-SNAPSHOT</version>-->
+        <!--</dependency>-->
 
         <dependency>
             <groupId>junit</groupId>

@@ -1,5 +1,6 @@
 package cn.com.ljw.websocket;
 
+import net.sf.json.JSONArray;
 import org.springframework.stereotype.Component;
 
 import javax.websocket.OnClose;
@@ -16,7 +17,7 @@ import java.util.concurrent.CopyOnWriteArraySet;
  * Created by Steph_Lin on 2020/5/9.
  */
 @Component
-@ServerEndpoint("/websocket/{id}")
+@ServerEndpoint(value = "/websocket/{id}", encoders = {PushMessageEncoder.class})
 public class WebSocket {
 
     private Session session;
@@ -71,7 +72,12 @@ public class WebSocket {
         Session session = sessionPool.get(id);
         if (session != null) {
             try {
-                session.getAsyncRemote().sendObject(message);
+                JSONArray jsonObject = JSONArray.fromObject(message);
+
+                System.out.println(jsonObject.toString());
+
+                session.getAsyncRemote().sendText(jsonObject.toString());
+//                session.getBasicRemote().sendObject(message);
             } catch (Exception e) {
                 e.printStackTrace();
             }
