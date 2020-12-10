@@ -23,7 +23,8 @@ export default {
   methods: {
     initWebSocket: function () {
       // WebSocket与普通的请求所用协议有所不同，ws等同于http，wss等同于https
-      this.websock = new WebSocket("ws://localhost:8088/learn/websocket/1");
+//      this.websock = new WebSocket("ws://localhost:8088/learn/websocket/1");
+      this.websock = new WebSocket("ws://10.10.103.168:8020/effengine/websocket");
       this.websock.onopen = this.websocketonopen;
       this.websock.onerror = this.websocketonerror;
       this.websock.onmessage = this.websocketonmessage;

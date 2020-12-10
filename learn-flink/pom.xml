@@ -12,8 +12,6 @@
     <artifactId>learn-flink</artifactId>
 
     <name>learn-flink</name>
-    <!-- FIXME change it to the project's website -->
-    <url>http://www.example.com</url>
 
     <dependencies>
 

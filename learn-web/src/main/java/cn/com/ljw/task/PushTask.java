@@ -15,7 +15,7 @@ import java.util.List;
  * @date 2020/11/20
  */
 @Slf4j
-//@Service
+@Service
 public class PushTask {
 
     @Autowired
